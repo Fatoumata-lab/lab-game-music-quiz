@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,38 +8,42 @@
     <title>Quiz Page</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/game.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <script type="module" src="/game.js"></script>
 </head>
+
 <body>
-    <div class = "container">
-        <div class = "question">Who interpreted this song?</div>
-            <div class = "audio">
-                <figure>
-                    <figcaption class = "play">Listen to the track:</figcaption>
-                    <audio controls src="/audio/Eric Benet & Faith Evans Georgy Porgy 1999 R&B Rock.mp3"></audio>
-                    </figure>
+    <div class="container">
+        <div class="question">Who interpreted 'Georgy Porgy'?</div>
+        <div class="audio">
+            <figure>
+                <figcaption class="play">Listen to the track:</figcaption>
+                <audio controls src="/audio/Eric Benet & Faith Evans Georgy Porgy 1999 R&B Rock.mp3"></audio>
+            </figure>
+        </div>
+        <div id="options">
+            <div class="option1">
+                <button data-answer="0" class="choice-btn">Choice 1</button>
+                <article class="option-box">
+                    <h2 class="artist">Usher & Chilli</h2>
+                    <p class = "image"><img src="/images/Chilli-and-Usher.jpg" alt="Usher & Chilli"></p>
+                </article>
             </div>
-                <div id = "options">
-                    <div class = "option1">
-                <button class = "choice-btn">Choice 1</button>
-                <article class = "option-box">
-                    <h2 class = "artist">Usher & Chilli</h2>
-                    <img src="/images/Chilli-and-Usher.jpg" alt="Usher & Chilli">
+            <div class="option2">
+                <button data-answer="1" class="choice-btn">Choice 2</button>
+                <article class="option-box">
+                    <h2 class="artist">Eric & Faith</h2>
+                    <p class = "image"><img src="/images/Eric Benet-et-Faith-Evans.jpg" alt="Eric & Faith"></p>
                 </article>
-                    </div>
-                    <div class = "option2">
-                <button class = "choice-btn">Choice 2</button>
-                <article class = "option-box">
-                    <h2 class = "artist">Eric & Faith</h2>
-                    <img src="/images/Eric Benet et Faith Evans.jpg" alt="Eric & Faith">
-                </article>
-                    </div>
-                </div>
-        <button id = "next-btn">Next question</button>
+            </div>
+        </div>
+        <button id="next-btn">Next question</button>
     </div>
-    <div class = "counts">
-        <p class = "points">Total of points: <span class = "good-answers">0</span> / 10</p>
+    <div class="counts">
+        <p class="points">Total of points: <span class="good-answers">0</span> / 10</p>
     </div>
 </body>
+
 </html>

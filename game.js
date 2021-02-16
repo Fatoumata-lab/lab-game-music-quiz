@@ -1,40 +1,44 @@
-// selection of all relevant tags
-
-const nextButton = document.getElementById("next-btn");
-const questionContainer = document.querySelector(".container");
-const questions = document.querySelector(".question");
 const audioTrack = document.querySelector(".audio");
+const choiceButtons = document.querySelectorAll(".choice-btn");
+const answerselected = document.getElementById("answer");
+const questionElements = document.querySelector(".question")
 
-const questionsList = [
-]
+const q1 = {question: "1. Who interpreted 'Georgy Porgy'?", audio:"", answer: 1, names:["Usher & Chilli", "Eric Bennet & Faith Evans"], photos:["",""]}
+const q2 = {question: "2. Who interpreted 'Changes'?", audio:"", answer: 0, names:["Tupac", "Biggie"], photos:["",""]}
+const q3 = {question: "3. Who interpreted 'If your girl only know'?", audio:"", answer: 0, names:["Aaliyah", "TLC"], photos:["",""]}
+const q4 = {question: "4. Who interpreted 'Family Affair'?", audio:"", answer: 0, names:["Mary J Blidge", "Ashanti"], photos:["",""]}
+const q5 = {question: "5. Who interpreted 'U know what's up'?", audio:"", answer: 0, names:["Donnell Jones", "112"], photos:["",""]}
+const q6 = {question: "6. Who interpreted 'Single ladies'?", audio:"", answer: 0, names:["Beyonce", "Kelly Rowland"], photos:["",""]}
+const q7 = {question: "7. Who interpreted 'When I See U'?", audio:"", answer: 1, names:["Mary J Blidge", "Fantasia"], photos:["",""]}
+const q8 = {question: "8. Who interpreted 'That's what I like'?", audio:"", answer: 1, names:["Chris Brown", "Bruno Mars"], photos:["",""]}
+const q9 = {question: "9. Who interpreted 'Body Party'?", audio:"", answer: 0, names:["Ciara", "Beyonce"], photos:["",""]}
+const q10 = {question: "10. Who interpreted 'You changed me'?", audio:"", answer: 0, names:["Jamie Foxx & Chris Brown", "Ne-Yo"], photos:["",""]}
 
-/*const q1 = {question: "Who interpreted 'Georgy Porgy'?", choice:["Choice 1","Choice2"], names:["Usher & Chilli", "Eric Bennet & Faith Evans"], photos:["",""]}
-const q2 = {question: "Who interpreted 'Changes'?", choice:["Choice 1","Choice2"], names:["Tupac", "Biggie"], photos:["",""]}
-const q3 = {question: "Who interpreted 'If your girl only know'?", choice:["Choice 1","Choice2"], names:["Aaliyah", "TLC"], photos:["",""]}
-const q4 = {question: "Who interpreted 'Family Affair'?", choice:["Choice 1","Choice2"], names:["Mary J Blidge", "Ashanti"], photos:["",""]}
-const q5 = {question: "Who interpreted 'U know what's up'?", choice:["Choice 1","Choice2"], names:["Donnell Jones", "112"], photos:["",""]}
-const q6 = {question: "Who interpreted 'Single ladies'?", choice:["Choice 1","Choice2"], names:["Beyonce", "Kelly Rowland"], photos:["",""]}
-const q7 = {question: "Who interpreted 'When I See U'?", choice:["Choice 1","Choice2"], names:["Mary J Blidge", "Fantasia"], photos:["",""]}
-const q8 = {question: "Who interpreted 'That's what I like'?", choice:["Choice 1","Choice2"], names:["Chris Brown", "Bruno Mars"], photos:["",""]}
-const q9 = {question: "Who interpreted 'Body Party'?", choice:["Choice 1","Choice2"], names:["Ciara", "Beyonce"], photos:["",""]}
-const q10 = {question: "Who interpreted 'You changed me'?", choice:["Choice 1","Choice2"], names:["Jamie Foxx & Chris Brown", "Ne-Yo"], photos:["",""]}
+const questions = [q1,q2,q3,q4,q5,q6,q7,q8,q9,q10]
 
-const questions = ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10"]
+// when good answer button goes green, when wrong goes red
 
-console.log(q1[0])
-*/
+ function changeChoiceButtonColor(evt) {
+     console.log(evt.target)
+     const clickedBtn = evt.target;
+     const answerIndex = Number(clickedBtn.getAttribute("data-answer"))
+     console.log(answerIndex)
+     if (answerIndex === q1.answer) {
+        choiceButtons.classList.add("right-answer-button");
+     } else {
+        choiceButtons.classList.add("wrong-answer-button");
+     }
+ }
+choiceButtons.forEach(function(button) {
+    button.addEventListener('click', changeChoiceButtonColor)
+});
 
+console.log()
 
-nextButton.addEventListener('click', goToNextQuestion);
+// Function change the question showing to a new one
 
-function goToNextQuestion() {
-    
-}
-
-function selectAnswer() {
-
-}
-
-function totalPoints () {
-
+function changeTheQuestion(newQuestion) {
+        questionElements.innerHTML = "";
+        questionElements.classList.add("");
+        questionElements.classList.remove("");
 }

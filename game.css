@@ -42,6 +42,28 @@
     margin-bottom: 5%;
 }
 
+.wrong-answer-button {
+    width : 200px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: red;
+    border: none;
+    border-radius: 10%;
+    margin-bottom: 5%;
+}
+
+.right-answer-button {
+    width : 200px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: green;
+    border: none;
+    border-radius: 10%;
+    margin-bottom: 5%;
+}
+
 .option1, .option2 {
     height: 400px;
     width: 400px;
