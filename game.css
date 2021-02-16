@@ -128,12 +128,6 @@ div img {
     margin-top: 5%;
 }
 
-.choice-btn.correct {
-    background-color: green;
-    color: white;
-}
-
-.choice-btn.wrong {
-    background-color: red;
-    color: white;
-}
+#next-btn:hover {
+    cursor: pointer;
+    border-color: black;
