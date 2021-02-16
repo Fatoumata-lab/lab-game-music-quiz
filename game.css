@@ -84,6 +84,7 @@
 div img {
     width: 350px;
     height: auto;
+    border-radius: 10%;
 }
 
 .counts {
