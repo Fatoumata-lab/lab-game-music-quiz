@@ -1,7 +1,8 @@
 const audioTrack = document.querySelector(".audio");
 const choiceButtons = document.querySelectorAll(".choice-btn");
 const answerselected = document.getElementById("answer");
-const questionElements = document.querySelector(".question")
+const questionElements = document.querySelector(".question");
+let score = 0;
 
 const q1 = {question: "1. Who interpreted 'Georgy Porgy'?", audio:"", answer: 1, names:["Usher & Chilli", "Eric Bennet & Faith Evans"], photos:["",""]}
 const q2 = {question: "2. Who interpreted 'Changes'?", audio:"", answer: 0, names:["Tupac", "Biggie"], photos:["",""]}
@@ -16,29 +17,37 @@ const q10 = {question: "10. Who interpreted 'You changed me'?", audio:"", answer
 
 const questions = [q1,q2,q3,q4,q5,q6,q7,q8,q9,q10]
 
+let currentQuestion = questions[0].question
+
+console.log(currentQuestion += 1)
+
 // when good answer button goes green, when wrong goes red
 
- function changeChoiceButtonColor(evt) {
-     console.log(evt.target)
-     const clickedBtn = evt.target;
-     const answerIndex = Number(clickedBtn.getAttribute("data-answer"))
-     console.log(answerIndex)
-     if (answerIndex === q1.answer) {
-        choiceButtons.classList.add("right-answer-button");
-     } else {
-        choiceButtons.classList.add("wrong-answer-button");
-     }
- }
 choiceButtons.forEach(function(button) {
     button.addEventListener('click', changeChoiceButtonColor)
 });
 
-console.log()
+ function changeChoiceButtonColor(evt) {
+     console.log(evt.target)
+     const clickedBtn = evt.target;
+     const answerIndex = Number(clickedBtn.getAttribute("data-answer"));
+     console.log(answerIndex)
+     if (answerIndex === questions[0].answer) {
+        clickedBtn.classList.add("right-answer-button");
+     } else {
+        clickedBtn.classList.add("wrong-answer-button");
+     }
+ }
 
-// Function change the question showing to a new one
+// Function change the question showing to a new one when clicking on next question
 
-function changeTheQuestion(newQuestion) {
-        questionElements.innerHTML = "";
+// questionElements.forEach(function(newQuestion){
+//     newQuestion.addEventListener('click', changeTheQuestion)
+// });
+
+function changeTheQuestion() {
+
+        questionElements.innerHTML = questions[i].question;
         questionElements.classList.add("");
         questionElements.classList.remove("");
 }
