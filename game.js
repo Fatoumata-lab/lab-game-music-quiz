@@ -1,13 +1,15 @@
-const nextButton = document.getElementById(".next-btn")
-const audioTrack = document.querySelector(".audio");
+const nextButton = document.getElementById("next-btn")
+const audioTrack = document.querySelector(".audios");
 const choiceButtons = document.querySelectorAll(".choice-btn");
 const answerselected = document.getElementById("answer");
-const questionElements = document.querySelector(".question");
+const questionElements = document.getElementById("question");
 const artistsNames = document.querySelectorAll(".artist");
 const images = document.querySelectorAll(".image")
 let score = 0;
 
-const q1 = {question: "1. Who interpreted 'Georgy Porgy'?", audio:"", answer: 1, names:["Usher & Chilli", "Eric Bennet & Faith Evans"], photos:["",""]}
+console.log(audioTrack)
+
+const q1 = {question: "1. Who interpreted 'Georgy Porgy'?", audio:"audio/Eric-Faith.mp3", answer: 1, names:["Usher & Chilli", "Eric Bennet & Faith Evans"], photos:["",""]}
 const q2 = {question: "2. Who interpreted 'Changes'?", audio:"", answer: 0, names:["Tupac", "Biggie"], photos:["",""]}
 const q3 = {question: "3. Who interpreted 'If your girl only know'?", audio:"", answer: 0, names:["Aaliyah", "TLC"], photos:["",""]}
 const q4 = {question: "4. Who interpreted 'Family Affair'?", audio:"", answer: 0, names:["Mary J Blidge", "Ashanti"], photos:["",""]}
@@ -19,9 +21,10 @@ const q9 = {question: "9. Who interpreted 'Body Party'?", audio:"", answer: 0, n
 const q10 = {question: "10. Who interpreted 'You changed me'?", audio:"", answer: 0, names:["Jamie Foxx & Chris Brown", "Ne-Yo"], photos:["",""]}
 
 const questions = [q1,q2,q3,q4,q5,q6,q7,q8,q9,q10];
-const currentQuestion = questions[0].question;
 
-console.log(currentQuestion)
+// const currentPageQuestion = questions[0];
+
+// console.log(currentPageQuestion)
 
 // when good answer button goes green, when wrong goes red
 
@@ -41,39 +44,46 @@ choiceButtons.forEach(function(button) {
      }
  }
 
-// Page changes when clicking on next button
+// Page changes when clicking on next button OPTION 1----
 
-let questionsList = [q1.question, q2.question, q3.question, q4.question, q5.question, q6.question, q7.question, q8.question, q9.question, q10.question];
+// Page changes when clicking on next button OPTION 2 ----
 
-let audiosList = [q1.audio, q2.audio, q3.audio, q4.audio, q5.audio, q6.audio, q7.audio, q8.audio, q9.audio, q10.audio];
-
-let artistsList = [q1.names, q2.names, q3.names, q4.names, q5.names, q6.names, q7.names, q8.names, q9.names, q10.names];
-
-let photosList = [q1.photos, q2.photos, q3.photos, q4.photos, q5.photos, q6.photos, q7.photos, q8.photos, q9.photos, q10.photos];
-
-console.log(artistsList[3])
-
-function ShowNewQuestion() {
+// for (let index = 0; index < questions.length; index++) {
+//     const element = questions[index];
     
-    questionElements.innerHTML = questionsList[i]+1;
-   
-    audioTrack.innerHTML = audiosList[i];
-   
-    artistsNames.innerHTML = artistsList[i];
-    
-    images.innerHTML = photosList[i];
+// }
 
-    //questionElements.classList.remove(questionElements);
-    //questionElements.classList.add().
+let currentIndex = 0
+
+function displayQuestion(){
+    questionElements.innerHTML = questions[currentIndex].question 
+    audioTrack.src = questions[currentIndex].audio
+
 }
 
-nextButton.forEach(function(newPage){
-    newPage.addEventListener('click', ShowNewQuestion)
-});
+function handleClick() {
+    currentIndex = currentIndex + 1
+    displayQuestion()
 
-// Function changes the question showing to a new one when clicking on next question
+console.log("test")
+}
 
+displayQuestion()
 
+    nextButton.addEventListener('click',handleClick)
+
+//-------------------------------------------------------------------------------
+
+/*function handleClick(e) {
+    const questionsIndex = Math.floor(Math.random*availableQuestions.length)
+    const currentQuestion = availableQuestions[questionsIndex]
+    question.innerText = currentQuestion
+
+    availableQuestions.splice(questionsIndex, 1)
+    return newPage
+}*/
+
+// -----------------------------------------------------------------------------
 
 // function ShowNewQuestion(followingQuestion) {
 //     for (let i = 0, i < questions.length, i++) {
