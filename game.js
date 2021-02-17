@@ -16,7 +16,7 @@ const q1 = {question: "1. Who interpreted 'Georgy Porgy'?", audio:"audio/Eric-Fa
 
 const q2 = {question: "2. Who interpreted 'Changes'?", audio:"audio/2pac.mp3", answer: 0, names1:"Tupac", names2:"Biggie", photos1:"images/tupac.jpg", photos2:"images/Biggie.jpg"}
 
-const q3 = {question: "3. Who interpreted 'If your girl only know'?", audio:"audio/Aaliyah.mp3", answer: 0, names1:"Aaliyah", names2:"TLC", photos1:"images/Aaliyah.jpg", photos2:"images/.jpg"}
+const q3 = {question: "3. Who interpreted 'If your girl only know'?", audio:"audio/Aaliyah.mp3", answer: 0, names1:"Aaliyah", names2:"TLC", photos1:"images/Aaliyah.jpg", photos2:"images/tlc.jpg"}
 
 const q4 = {question: "4. Who interpreted 'Family Affair'?", audio:"audio/Family-Affair.mp3", answer: 0, names1:"Mary J Blidge", names2:"Ashanti", photos1:"images/mary-j-blige.jpg", photos2:"images/ashanti.jpg"}
 
@@ -49,18 +49,14 @@ choiceButtons.forEach(function(button) {
      const clickedBtn = evt.target;
      const answerIndex = Number(clickedBtn.getAttribute("data-answer"));
      console.log(answerIndex)
-     if (answerIndex === questions[0].answer) {
-        clickedBtn.classList.add("right-answer-button");
+     if (answerIndex === questions[currentIndex].answer) {
+        clickedBtn.classList.toggle("right-answer-button");
      } else {
-        clickedBtn.classList.add("wrong-answer-button");
+        clickedBtn.classList.toggle("wrong-answer-button");
      }
  }
 
 // Page changes when clicking on next button OPTION 1----
-
-// for (let index = 0; index < questions.length; index++) {
-//     const element = questions[index];
-// }
 
 let currentIndex = 0
 
@@ -74,35 +70,12 @@ function displayQuestion(){
     image1.src = questions[currentIndex].photos1
     image2.src = questions[currentIndex].photos2
 }
-
 function handleClick() {
     currentIndex = currentIndex + 1
     displayQuestion()
-
-console.log("test")
 }
-
-
 
     nextButton.addEventListener('click',handleClick)
 
 //-------------------------------------------------------------------------------
-
-/*function handleClick(e) {
-    const questionsIndex = Math.floor(Math.random*availableQuestions.length)
-    const currentQuestion = availableQuestions[questionsIndex]
-    question.innerText = currentQuestion
-
-    availableQuestions.splice(questionsIndex, 1)
-    return newPage
-}*/
-
-// -----------------------------------------------------------------------------
-
-// function ShowNewQuestion(followingQuestion) {
-//     for (let i = 0, i < questions.length, i++) {
-//     questionElements.classList.remove(currentQuestion);
-//     questionElements.classList.add(currentQuestion + 1).innerHTML;
-// }
-// console.log(followingQuestion)
-// }
+//Calculate the gamer's score out of 10
