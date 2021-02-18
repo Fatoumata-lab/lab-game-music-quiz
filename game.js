@@ -16,7 +16,7 @@ let score = 0;
 
 const q1 = { question: "1. Who interpreted 'Georgy Porgy'?", audio: "./audio/Eric-Faith.mp3", answer: 1, names1: "Usher & Chilli", names2: "Eric Bennet & Faith Evans", photos1: "./images/CU.jpg", photos2: "./images/EricFaith.jpg", button: 'Next Question' }
 
-const q2 = { question: "2. Who interpreted 'Changes'?", audio: "./audio/2pac.mp3", answer: 0, names1: "Tupac", names2: "Biggie", photos1: "./images/tupac.jpg", photos2: "./images/biggie2.jpg", button: 'Next Question' }
+const q2 = { question: "2. Who interpreted 'Changes'?", audio: "./audio/2pac.mp3", answer: 0, names1: "Tupac", names2: "Biggie", photos1: "./images/tupac.jpg", photos2: "./images/big.jpg", button: 'Next Question' }
 
 const q3 = { question: "3. Who interpreted 'If your girl only know'?", audio: "./audio/Aaliyah.mp3", answer: 0, names1: "Aaliyah", names2: "TLC", photos1: "./images/aaliyah2.jpg", photos2: "./images/tlc.jpg", button: 'Next Question' }
 
