@@ -88,15 +88,25 @@ function disableButtonsClasses() {
 }
 
 function handleClick() {
+    //if (currentIndex < question.length) {
     hasAnswered = false;
     currentIndex = currentIndex + 1
     displayQuestion()
     disableButtonsClasses()
-    //calculateScore()
+    lastPageResults()
+//     } else {
+//         page.classList.add(".hide")
+// }
 }
 nextButton.addEventListener('click', handleClick)
 
 //last page set
+
+// function lastPageResults() {
+//     if (currentIndex === questions.length) {
+//     div.classList.add(".hide")
+//     }
+// }
 
 //if (questions.length > currentIndex)
 //div.classList.add(.hide)
