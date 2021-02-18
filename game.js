@@ -41,7 +41,6 @@ const questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
 // when good answer button goes green, when wrong goes red
 let hasAnswered = false;
 
-
 choiceButtons.forEach(function (button) {
     button.addEventListener('click', changeChoiceButtonColor)
 });
@@ -60,7 +59,6 @@ function changeChoiceButtonColor(evt) {
         clickedBtn.classList.add("wrong-answer-button");
         goodAnswer.innerHTML = score;
         console.log("bad")
-
     }
 }
 
@@ -81,11 +79,9 @@ function displayQuestion() {
     nextButton.innerHTML = questions[currentIndex].button
     } else {
     page.classList.add("hide")
-    pointsBox.innerHTML = "<h2>All done!</h2><br>Your score:</br>"
+    pointsBox.innerHTML = "<h3>Hope you enjoyed it!</h3>"
 }
 }
-
-// disable button not clicked
 
 function disableButtonsClasses() {
     choicebtn1.classList.remove("right-answer-button");
@@ -100,12 +96,4 @@ function handleClick() {
     displayQuestion()
     disableButtonsClasses()
 }
-
 nextButton.addEventListener('click', handleClick)
-
-
-// function endGamePage() {
-//     let endQuiz = 
-//     `<h2>All done!</h2>
-//     <h3>Votre score est de / 10</h3>`
-// }
