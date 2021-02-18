@@ -10,8 +10,8 @@ const artistName2 = document.getElementById("name2");
 const image1 = document.getElementById("image1");
 const image2 = document.getElementById("image2");
 const goodAnswer = document.querySelector(".good-answers");
+const page = document.querySelector(".container")
 
-console.log(audioTrack)
 
 const q1 = {question: "1. Who interpreted 'Georgy Porgy'?", audio:"./audio/Eric-Faith.mp3", answer: 1, names1:"Usher & Chilli", names2:"Eric Bennet & Faith Evans", photos1:"./images/CU.jpg", photos2:"./images/EricFaith.jpg", button: 'Next Question'}
 
@@ -46,26 +46,15 @@ choiceButtons.forEach(function(button) {
      console.log(evt.target)
      const answerIndex = Number(clickedBtn.getAttribute("data-answer"));
      if (answerIndex === questions[currentIndex].answer) {
-        clickedBtn.classList.toggle("right-answer-button");
+        clickedBtn.classList.add("right-answer-button");
         goodAnswer.innerHTML = score + 1;
      } else {
-        clickedBtn.classList.toggle("wrong-answer-button");
+        clickedBtn.classList.add("wrong-answer-button");
         goodAnswer.innerHTML = score + 0;
      }
  }
+
  let score = 0;
-
- // disable button not clicked
-
-/* function disableOtherButton(e) {
-     const selectedAnswer = e.target;
-     console.log(e.target)
-     if (selectedAnswer = choicebtn1) {
-       
-     } else if (selectedAnswer = choicebtn2) {
-        
-     }
- }*/
 
  //choiceButtons.addEventListener('click',disableOtherButton)
 
@@ -92,21 +81,31 @@ function displayQuestion(){
     image2.src = questions[currentIndex].photos2
     nextButton.innerHTML = questions[currentIndex].button
 }
+
+ // disable button not clicked
+
+ function disableButtonsClasses() {
+    choicebtn1.classList.remove("right-answer-button");
+    choicebtn1.classList.remove("wrong-answer-button");
+    choicebtn2.classList.remove("right-answer-button");
+    choicebtn2.classList.remove("wrong-answer-button");
+}
+
+//const clickedBtn = 
+
 function handleClick() {
     currentIndex = currentIndex + 1
     displayQuestion()
-    //choiceButtons.classList.remove("right-answer-button");
-    //choiceButtons.classList.remove("right-answer-button");
-    
-    //if (questions.length > currentIndex)
-    //div.classList.add(.hide)
+    disableButtonsClasses()
 }
     nextButton.addEventListener('click',handleClick)
 
+    //if (questions.length > currentIndex)
+    //div.classList.add(.hide)
 
 //reset state function
 
-/*const div = document.getElementById("options");
-function resetState() {
-    div.classList.add('hide')
-}*/
+
+function endGamePage() {
+    page.classList.add('hide')
+}
