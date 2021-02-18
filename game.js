@@ -10,7 +10,9 @@ const artistName2 = document.getElementById("name2");
 const image1 = document.getElementById("image1");
 const image2 = document.getElementById("image2");
 const goodAnswer = document.querySelector(".good-answers");
-const page = document.querySelector(".container")
+const page = document.querySelector(".container");
+const totalPoints = document.querySelector(".counts");
+const pointsBox = document.querySelector(".points")
 
 let score = 0;
 
@@ -69,6 +71,7 @@ let currentIndex = 0
 displayQuestion()
 
 function displayQuestion() {
+    if (currentIndex < questions.length) {
     questionElements.innerHTML = questions[currentIndex].question
     audioTrack.src = questions[currentIndex].audio
     artistName1.innerHTML = questions[currentIndex].names1
@@ -76,6 +79,10 @@ function displayQuestion() {
     image1.src = questions[currentIndex].photos1
     image2.src = questions[currentIndex].photos2
     nextButton.innerHTML = questions[currentIndex].button
+    } else {
+    page.classList.add("hide")
+    pointsBox.innerHTML = "<h2>All done!</h2><br>Your score:</br>"
+}
 }
 
 // disable button not clicked
@@ -88,29 +95,17 @@ function disableButtonsClasses() {
 }
 
 function handleClick() {
-    //if (currentIndex < question.length) {
     hasAnswered = false;
     currentIndex = currentIndex + 1
     displayQuestion()
     disableButtonsClasses()
-    lastPageResults()
-//     } else {
-//         page.classList.add(".hide")
-// }
 }
+
 nextButton.addEventListener('click', handleClick)
 
-//last page set
 
-// function lastPageResults() {
-//     if (currentIndex === questions.length) {
-//     div.classList.add(".hide")
-//     }
+// function endGamePage() {
+//     let endQuiz = 
+//     `<h2>All done!</h2>
+//     <h3>Votre score est de / 10</h3>`
 // }
-
-//if (questions.length > currentIndex)
-//div.classList.add(.hide)
-
-function endGamePage() {
-    page.classList.add('hide')
-}
